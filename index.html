@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Execício 5</title>
+
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+			background-color: #D97D48;
+			margin: 0;
+			
+        }
+		
+		header{
+			background-color: #F2B872;
+            height: 80px;
+			color: #732727;
+			margin-bottom: 10px;
+			margin-top:0px;
+			padding: 5px;
+			border-bottom: 5px solid #732727;
+			
+        }
+		
+        h2{           
+            color: #732727;
+            width: 290px;
+            padding: 15px;
+			
+        }
+		
+		label{
+			color: #732727;
+			margin-left: 15px;
+			font-weight: bold;
+			
+		}
+
+        hr{
+            width: 310px;
+            border: 2px solid #732727;
+        }
+
+        form{
+            background-color: #F2B872;
+            border:3px solid #732727;
+            width: 550px;
+			padding: 25px;
+			margin-left: 500px;
+			
+        }
+
+        input{
+            width: 300px;
+            border-bottom: 2px solid #732727 ;
+            margin: 7px;
+            padding: 8px;
+            border-left: #F2B872;
+			border-right: #F2B872;
+			border-top: #F2B872;
+			width: 520px;
+
+        }
+
+        input::placeholder{
+            color: #732727;
+            font-weight: bold;
+			
+			
+        }
+
+        button{
+            border:3px solid #732727 ;
+            background-color: #732727;
+            color: white;
+            font-weight: bold;
+            padding: 10px;
+            margin-top: 10px;
+            margin-bottom: 28px;
+            width: 215px;
+			
+			
+        }
+
+        button.btn_cancelar{
+            background-color: #3A3B40s !important;
+            color: #F2B872 !important;
+        }
+
+        button.btn_cancelar:hover{
+            border: 3px solid #732727;
+        }
+		
+        button:hover{
+            border:3px solid #BF5349;
+        }
+		
+		button.btn_salvar{
+			background-color: #BF5349 !important;
+            color: #732727 !important;
+		}
+		
+		
+		
+		
+
+		
+    </style>
+</head>
+<body>
+    
+   
+	<header>
+        <h1>SISTEMA DE COMPRAS</h1>
+    </header>
+	
+	
+     
+    <form action="exercicio.js" method="POST">
+        
+		<h2>Formulário De Produtos</h2>
+        <hr>
+		<div class="nomeinput">
+		<label>Nome:</label>
+        <input type="text" id="nome" placeholder="Nome" required>
+		</div>
+		
+		<div class="nascimentoinput">
+		<label>Data de nascimento:</label>
+        <input type="date" id="nascimento" placeholder="dd/mm/aaaa" required>
+		</div>
+		
+		<div class="emailinput">
+		<label>E-mail:</label>
+        <input type="email" id="email" placeholder="ex. pedro@pedro.com.br" required>
+		</div>
+		
+		<div class="telefoneinput">
+		<label>Telefone:</label>
+        <input type="text"id="telefone" placeholder="ex. 48 99999-1234" required>
+		</div>
+		
+        <br>
+		<center>
+		<div class="cancelar">
+        <button type="reset" class="btn_cancelar">Cancelar</button>
+		</div>
+		<div class="salvar">
+        <button type="submit" class="btn_salvar" onclick="salvar()">Salvar</button>
+		</div>
+		</center>
+    </form>
+    <center></center>
+	
+	<script type="text/javascript">
+		function salvar(){
+
+		var nome = document.getElementById('nome').value
+		var nascimento = document.getElementById('nascimento').value
+        var email = document.getElementById('email').value
+		var telefone = document.getElementById('telefone').value
+			
+		let nomediv = document.getElementById("nome")
+		let nascimentodiv = document.getElementById("nascimento")
+		let emaildiv = document.getElementById("email")
+		let telefonediv = document.getElementById("telefone")
+		
+			if (nome == "" && nascimento == "" && email == "" && telefone == ""){
+			nomediv.style = "border-color: red"
+			setTimeout(() => {nomediv.style = "border-color: #CC6247;"}, 600)	
+			
+			nascimentodiv.style = "border-color: red"
+			setTimeout(() => {nascimentodiv.style = "border-color: #CC6247;"}, 600)
+			
+			emaildiv.style = "border-color: red"
+			setTimeout(() => {emaildiv.style = "border-color: #CC6247;"}, 600)	
+			
+			telefonediv.style = "border-color: red"
+			setTimeout(() => {telefonediv.style = "border-color: #CC6247;"}, 600)
+			
+			}else{
+			
+			nomediv.style = "border-color: green"
+			setTimeout(() => {nomediv.style = "border-color: #CC6247;"}, 600)
+			
+			nascimentodiv.style = "border-color: green"
+			setTimeout(() => {nascimentodiv.style = "border-color: #CC6247;"}, 600)
+			
+			emaildiv.style = "border-color: green"
+			setTimeout(() => {emaildiv.style = "border-color: #CC6247;"}, 600)
+			
+			telefonediv.style = "border-color: green"
+			setTimeout(() => {telefonediv.style = "border-color: #CC6247;"}, 600)
+			
+            console.log("Formulário preenchido com sucesso!")
+			}
+		}
+	</script>
+	
+	
+</body>
+</html>
